@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Navadeep's personal portfolio — Artificial Intelligence and Machine Learning student.">
+  <title>Navadeep | AI &amp; ML Student Portfolio</title>
+  <style>
+    :root{--bg:#080d1a;--panel:#101a2d;--panel2:#0d1526;--text:#edf3ff;--muted:#a8b5cc;--blue:#67a8ff;--cyan:#6ce5e0;--line:rgba(157,185,225,.17);--shadow:0 18px 55px rgba(0,0,0,.28)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(39,104,180,.19),transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,13,26,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;letter-spacing:.4px;font-size:1.12rem}.brand span{color:var(--cyan)}
+    .navlinks{display:flex;gap:22px;flex-wrap:wrap}.navlinks a{font-size:.9rem;color:var(--muted);transition:.2s}.navlinks a:hover{color:var(--cyan)}
+    .hero{padding:100px 0 86px;display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:42px;min-height:560px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:.83rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}
+    h1{font-size:clamp(2.8rem,7vw,5.3rem);line-height:1.04;letter-spacing:-2.8px;margin:20px 0}
+    h1 span{background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:1.12rem;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 19px;border-radius:12px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:linear-gradient(110deg,#397fe0,#39b9bd);color:#06101c;border:0}.btn:hover{transform:translateY(-2px)}
+    .hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(25,43,72,.92),rgba(13,21,38,.92));border-radius:25px;padding:28px;box-shadow:var(--shadow);text-align:center}
+    .avatar{width:116px;height:116px;border-radius:28px;margin:0 auto 18px;display:grid;place-items:center;background:linear-gradient(135deg,#397fe0,#54d6cf);color:#071222;font-size:2.6rem;font-weight:900}
+    .hero-card h2{margin:5px 0;font-size:1.25rem}.hero-card p{margin:0;color:var(--muted);font-size:.92rem}
+    .mini-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px}.tag{font-size:.78rem;padding:6px 10px;border:1px solid var(--line);border-radius:30px;color:#c7d7ef}
+    section{padding:76px 0;scroll-margin-top:75px}
+    .section-kicker{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
+    h2.section-title{font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-1px;margin:8px 0 25px}
+    .section-intro{color:var(--muted);max-width:720px;margin-top:-12px;margin-bottom:28px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{background:linear-gradient(145deg,rgba(16,26,45,.96),rgba(12,20,35,.96));border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 9px;font-size:1.12rem}.card p{margin:0;color:var(--muted)}
+    .about-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+    .meta{padding:15px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025)}
+    .meta small{display:block;color:var(--muted);font-size:.76rem;margin-bottom:4px}.meta strong{font-size:.94rem;overflow-wrap:anywhere}
+    .skill-list{display:flex;gap:11px;flex-wrap:wrap}.skill{padding:11px 15px;border:1px solid rgba(103,168,255,.25);background:rgba(103,168,255,.08);border-radius:12px;color:#dceaff;font-weight:650}
+    .skill small{display:block;font-size:.72rem;color:var(--muted);font-weight:500}
+    .project-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.project-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(108,229,224,.1);font-size:1.25rem}
+    .status{font-size:.72rem;color:var(--cyan);border:1px solid rgba(108,229,224,.25);padding:4px 9px;border-radius:30px}
+    .achievement-note{border-left:3px solid var(--cyan);padding:15px 18px;background:rgba(108,229,224,.055);border-radius:0 12px 12px 0;color:var(--muted)}
+    .contact-card{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+    .email{color:var(--cyan);font-weight:700;overflow-wrap:anywhere}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.85rem;text-align:center}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:72px 0 55px;gap:30px}.hero-card{max-width:420px}.navlinks{gap:12px}.navlinks a{font-size:.78rem}.grid{grid-template-columns:1fr}section{padding:58px 0}}
+    @media(max-width:480px){.wrap{width:min(100% - 28px,1080px)}nav{align-items:flex-start;padding:15px 0;flex-direction:column}.navlinks{gap:13px}.about-meta{grid-template-columns:1fr}h1{letter-spacing:-1.7px}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">N<span>.</span></a>
+      <div class="navlinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+        <a href="#projects">Projects</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> AI &amp; ML Student</div>
+          <h1>Hello, I'm<br><span>Navadeep.</span></h1>
+          <p class="lead">I am an Artificial Intelligence and Machine Learning student at Joy University. I am building my foundation in programming and web development, and exploring how technology can solve real-world problems.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore my projects</a>
+            <a class="btn" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="avatar" aria-label="Navadeep initials">N</div>
+          <h2>Navadeep</h2>
+          <p>Artificial Intelligence &amp; Machine Learning</p>
+          <div class="mini-tags"><span class="tag">Joy University</span><span class="tag">Section F</span><span class="tag">Student</span></div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-kicker">Get to know me</div>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-intro">I am a first-year student interested in technology, programming, and the possibilities of Artificial Intelligence.</p>
+        <div class="card">
+          <h3>My journey and goals</h3>
+          <p>I am pursuing my studies in Artificial Intelligence and Machine Learning at Joy University. I enjoy learning the fundamentals of web development and programming through hands-on practice. My current goal is to strengthen my coding skills, build useful projects, and gradually explore AI and machine learning. In the future, I aspire to contribute to meaningful technology projects and grow into a skilled professional in the field.</p>
+          <div class="about-meta">
+            <div class="meta"><small>University</small><strong>Joy University</strong></div>
+            <div class="meta"><small>Department</small><strong>Artificial Intelligence &amp; Machine Learning</strong></div>
+            <div class="meta"><small>Section</small><strong>F</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-kicker">What I'm learning</div>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-intro">My current technical skills and learning areas.</p>
+        <div class="skill-list">
+          <div class="skill">HTML <small>Beginner</small></div>
+          <div class="skill">CSS <small>Beginner</small></div>
+          <div class="skill">Python <small>Beginner</small></div>
+          <div class="skill">C Programming <small>Beginner</small></div>
+          <div class="skill">Web Development <small>Learning</small></div>
+          <div class="skill">Problem Solving <small>Developing</small></div>
+          <div class="skill">AI &amp; ML Fundamentals <small>Learning</small></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-kicker">What I've worked on</div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-intro">A selection of beginner projects that help me apply what I learn.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="project-top"><div class="project-icon">⌘</div><span class="status">Web development</span></div>
+            <h3>Restaurant Website</h3>
+            <p>A beginner website project focused on presenting restaurant information in a clear layout. Built to practise HTML page structure, CSS styling, spacing, and basic navigation.</p>
+          </article>
+          <article class="card">
+            <div class="project-top"><div class="project-icon">✦</div><span class="status">Personal project</span></div>
+            <h3>Personal Portfolio Website</h3>
+            <p>A personal portfolio designed to introduce my academic background, current skills, projects, and contact information. Created to practise responsive web design and present my learning journey.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="achievements">
+        <div class="section-kicker">My progress</div>
+        <h2 class="section-title">Achievements</h2>
+        <div class="card">
+          <h3>Learning and development</h3>
+          <p class="achievement-note">I am at the beginning of my academic and technical journey. I am currently developing my programming and web development skills through coursework and practical assignments. I will add verified certifications, awards, and participation achievements here as I earn them.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-kicker">Let's connect</div>
+        <h2 class="section-title">Contact</h2>
+        <div class="card contact-card">
+          <div><h3>Get in touch</h3><p>If you would like to connect about learning, projects, or technology, feel free to email me.</p></div>
+          <a class="email" href="mailto:nagaramnavadeep05@gmail.com">nagaramnavadeep05@gmail.com</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap">© <span id="year"></span> Navadeep · Student Portfolio</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
